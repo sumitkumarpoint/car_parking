@@ -112,25 +112,39 @@ class CarPark
 end
 
 # Example 1
-car = CarPark.new(medium_space: 1, small_space: 1, large_space: 1)
-p car.admit_the_car('license_plat_number1', 'small')
-p car.admit_the_car('license_plat_number2', 'small')
-p car.admit_the_car('license_plat_number3', 'small')
-p car.exit_the_car('license_plat_number1')
-p car.admit_the_car('license_plat_number4', 'large')
-p car.exit_the_car('license_plat_number2')
-p car.admit_the_car('license_plat_number5', 'medium')
-p car.car_parked
-
-# Example 2
-# car = CarPark.new(small_space: 1, medium_space: 2, large_space: 1)
+# car = CarPark.new(medium_space: 1, small_space: 1, large_space: 1)
 # p car.admit_the_car('license_plat_number1', 'small')
 # p car.admit_the_car('license_plat_number2', 'small')
 # p car.admit_the_car('license_plat_number3', 'small')
-# p car.admit_the_car('license_plat_number4', 'medium')
 # p car.exit_the_car('license_plat_number1')
-# p car.admit_the_car('license_plat_number5', 'large')
+# p car.admit_the_car('license_plat_number4', 'large')
 # p car.exit_the_car('license_plat_number2')
-# p car.admit_the_car('license_plat_number6', 'medium')
+# p car.admit_the_car('license_plat_number5', 'medium')
 # p car.car_parked
 
+# Output
+# {
+#   'small_space'=>{'license_plat_number3'=>'small'},
+#   'medium_space'=>{'license_plat_number5'=>'medium'},
+#   'large_space'=>{'license_plat_number4'=>'large'}
+# }
+
+# Example 2
+car = CarPark.new(small_space: 1, medium_space: 2, large_space: 1)
+p car.admit_the_car('license_plat_number1', 'small')
+p car.admit_the_car('license_plat_number2', 'small')
+p car.admit_the_car('license_plat_number3', 'small')
+p car.admit_the_car('license_plat_number4', 'medium')
+p car.exit_the_car('license_plat_number1')
+p car.admit_the_car('license_plat_number5', 'large')
+p car.exit_the_car('license_plat_number2')
+p car.admit_the_car('license_plat_number6', 'medium')
+p car.car_parked
+
+# Output
+# {
+#   'small_space'=>{'license_plat_number3'=>'small'},
+#   'medium_space'=>{'license_plat_number4'=>'medium',
+#   'license_plat_number6'=>'medium'},
+#   'large_space'=>{'license_plat_number5'=>'large'}
+# }
